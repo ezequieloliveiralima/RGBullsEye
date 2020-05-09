@@ -39,8 +39,8 @@ struct ContentView: View {
             
             VStack {
                 ColorSlider(value: $rGuess, textColor: Color.red)
-                Text("Green slider")
-                Text("Blue slider")
+                ColorSlider(value: $bGuess, textColor: Color.blue)
+                ColorSlider(value: $gGuess, textColor: Color.green)
             }
         }
     }
@@ -59,7 +59,7 @@ struct ColorSlider: View {
     var body: some View {
         HStack {
             Text("0").foregroundColor(textColor)
-            Slider(value: $value)
+            Slider(value: $value).accentColor(textColor)
             Text("255").foregroundColor(textColor)
         }.padding()
     }
