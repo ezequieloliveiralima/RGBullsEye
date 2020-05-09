@@ -38,11 +38,7 @@ struct ContentView: View {
             Text("Hit me button")
             
             VStack {
-                HStack {
-                    Text("0").foregroundColor(Color.red)
-                    Slider(value: $rGuess)
-                    Text("255").foregroundColor(Color.red)
-                }
+                ColorSlider(value: $rGuess, textColor: Color.red)
                 Text("Green slider")
                 Text("Blue slider")
             }
@@ -53,5 +49,18 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(rGuess: 0.5, gGuess: 0.5, bGuess: 0.5)
+    }
+}
+
+struct ColorSlider: View {
+    @Binding var value: Double
+    var textColor: Color
+
+    var body: some View {
+        HStack {
+            Text("0").foregroundColor(textColor)
+            Slider(value: $value)
+            Text("255").foregroundColor(textColor)
+        }.padding()
     }
 }
