@@ -15,6 +15,8 @@ struct ContentView: View {
                 Text("Target Color Block")
                 Text("Guess Color Block")
             }
+            VStack {
+            }
         }
     }
 }
