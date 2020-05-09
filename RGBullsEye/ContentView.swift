@@ -28,9 +28,9 @@ struct ContentView: View {
                 VStack {
                     Rectangle().foregroundColor(Color(red: rGuess, green: gGuess, blue: bGuess, opacity: 1.0))
                     HStack {
-                      Text("R: xxx")
-                      Text("G: xxx")
-                      Text("B: xxx")
+                        Text([ "R:", Int(rGuess * 255.0).description ].joined(separator: " "))
+                        Text([ "G:", Int(gGuess * 255.0).description ].joined(separator: " "))
+                        Text([ "B:", Int(bGuess * 255.0).description ].joined(separator: " "))
                     }
                 }
             }
@@ -38,7 +38,11 @@ struct ContentView: View {
             Text("Hit me button")
             
             VStack {
-                Text("Red slider")
+                HStack {
+                    Text("0").foregroundColor(Color.red)
+                    Slider(value: $rGuess)
+                    Text("255").foregroundColor(Color.red)
+                }
                 Text("Green slider")
                 Text("Blue slider")
             }
