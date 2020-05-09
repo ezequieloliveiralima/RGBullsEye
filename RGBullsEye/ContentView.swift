@@ -39,8 +39,8 @@ struct ContentView: View {
             
             VStack {
                 ColorSlider(value: $rGuess, textColor: Color.red)
-                ColorSlider(value: $bGuess, textColor: Color.blue)
                 ColorSlider(value: $gGuess, textColor: Color.green)
+                ColorSlider(value: $bGuess, textColor: Color.blue)
             }
         }
     }
