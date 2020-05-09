@@ -12,6 +12,7 @@ struct ContentView: View {
     var body: some View {
         HStack {
             Text("Target Color Block")
+            Text("Guess Color Block")
         }
     }
 }
